@@ -1,34 +1,14 @@
 // material-ui
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction';
-import ListItemText from '@mui/material/ListItemText';
-import Stack from '@mui/material/Stack';
+import { Button, Grid, MenuItem, Select } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 // project import
 import MainCard from 'components/MainCard';
-import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
-import MonthlyBarChart from './MonthlyBarChart';
-import ReportAreaChart from './ReportAreaChart';
-import UniqueVisitorCard from './UniqueVisitorCard';
-import SaleReportCard from './SaleReportCard';
-import OrdersTable from './OrdersTable';
 
 // assets
-import GiftOutlined from '@ant-design/icons/GiftOutlined';
-import MessageOutlined from '@ant-design/icons/MessageOutlined';
-import SettingOutlined from '@ant-design/icons/SettingOutlined';
-import avatar1 from 'assets/images/users/avatar-1.png';
-import avatar2 from 'assets/images/users/avatar-2.png';
-import avatar3 from 'assets/images/users/avatar-3.png';
-import avatar4 from 'assets/images/users/avatar-4.png';
 import HeaderTab from './HeaderTab';
 import MemberList from './MemberList';
 
@@ -63,7 +43,30 @@ export default function DashboardDefault() {
         <HeaderTab />
       </Grid>
       <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
-
+      <Grid item xs={12} >
+        <Typography variant="h6" gutterBottom>
+          회원 목록 (총 100명 | 승인대기 1건)
+        </Typography>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px', justifyContent: 'flex-end' }}>
+          <Button variant="contained" style={{ marginRight: '16px' }}>
+            등록
+          </Button>
+          <Select defaultValue="가입일시순" style={{ marginRight: '16px' }}>
+            <MenuItem value="가입일시순">가입일시순</MenuItem>
+            <MenuItem value="다른옵션">다른옵션</MenuItem>
+          </Select>
+          <Select defaultValue="50개씩 보기" style={{ marginRight: '16px' }}>
+            <MenuItem value="50개씩 보기">50개씩 보기</MenuItem>
+            <MenuItem value="다른옵션">다른옵션</MenuItem>
+          </Select>
+          <Button variant="contained" style={{ marginRight: '16px' }}>
+            엑셀 다운로드
+          </Button>
+          <Button variant="contained" style={{ marginRight: '16px' }}>
+            저장
+          </Button>
+        </div>
+      </Grid>
       {/* row 2 */}
       <Grid item xs={12}>
         <MemberList />
